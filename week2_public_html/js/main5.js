@@ -285,3 +285,7 @@ if (sessionStorage.getItem('token')) {
     getCat();
     getUsers();
 }
+
+//del these later
+getCat();
+getUsers();
