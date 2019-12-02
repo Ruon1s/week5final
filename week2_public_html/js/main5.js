@@ -230,6 +230,7 @@ loginForm.addEventListener('submit', async (evt) => {
 // logout
 logOut.addEventListener('click', async (evt) => {
     evt.preventDefault();
+
     try {
         const options = {
             headers: {

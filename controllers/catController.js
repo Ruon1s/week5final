@@ -4,6 +4,7 @@ const resize = require('../utils/resize');
 const imageMeta = require('../utils/imageMeta');
 
 
+
 const cat_list_get = async (req, res) => {
   const cats = await catModel.getAllCats();
   await res.json(cats);
@@ -19,10 +20,10 @@ const cat_create_post = async(req, res) => {
 
     const params = [req.body.name, req.body.age, req.body.weight, req.body.owner, req.file.filename, coords];
     console.log(params);
-   // const response = await catModel.addCat(params);
+    const response = await catModel.addCat(params);
     console.log(response);
-   // const cat = await catModel.getCat([response.insertId]);
-   // await res.json(cat);
+    const cat = await catModel.getCat([response.insertId]);
+    await res.json(cat);
   } catch(e) {
     console.log('error', e.message);
     res.status(400).json({message: 'error'});
